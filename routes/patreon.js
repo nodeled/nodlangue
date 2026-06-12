@@ -244,9 +244,10 @@ router.get("/auth/patreon/callback", async (req, res) => {
     // ── Chemin A : pas de session Supabase ───────────────────────────────────
     if (!attrs.email) return redirectError(res, "patreon_email_required");
 
+    const base = cfg.frontendBase().replace(/\/?$/, '/');
     const { actionLink, userId } = await sbCreateOrFindUserAndGetMagicLink(
       attrs.email,
-      cfg.frontendBase() + 'login.html'
+      base + 'login.html'
     );
     if (!userId) return redirectError(res, "supabase_user_creation_failed");
 
