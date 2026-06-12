@@ -1593,7 +1593,7 @@
         dataEnv: 'dev',
         showLoginDialog: () => { window.location.href = '/login.html'; },
       });
-      NodelManager.nodelApiUrl = location.hostname === 'localhost' ? 'http://localhost:4000' : 'https://nodlangue.com';
+      NodelManager.nodelApiUrl = location.hostname === 'localhost' ? 'http://localhost:4000' : 'https://nodlangue.onrender.com';
       NodelManager.loadFolders();
       _syncModeIcons();
 
